@@ -53,8 +53,8 @@ Is this correct? (y/n): y
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/naakaarafr/storybook-generator.git
-   cd storybook-generator
+   git clone https://github.com/naakaarafr/Storybook-Generator.git
+   cd Storybook-Generator
    ```
 
 2. **Install dependencies:**
@@ -331,9 +331,5 @@ Future enhancements planned:
 ---
 
 <div align="center">
-
-**Made with ❤️ for education and imagination**
-
-[⭐ Star this project](https://github.com/naakaarafr/storybook-generator) if you found it helpful!
 
 </div>
