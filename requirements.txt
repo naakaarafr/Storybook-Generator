@@ -1,0 +1,166 @@
+# Children's Storybook Generator Requirements
+# ============================================
+# 
+# This project generates illustrated children's storybooks using:
+# - CrewAI framework for multi-agent coordination
+# - Google Gemini 2.0 Flash for text generation
+# - Hugging Face FLUX.1-dev for image generation
+# - Multiple PDF conversion options
+#
+# Installation: pip install -r requirements.txt
+# Python version: 3.8+
+
+# Core AI and Agent Framework
+# ---------------------------
+crewai>=0.28.0
+crewai-tools>=0.1.0
+langchain>=0.1.0
+langchain-google-genai>=1.0.0
+langchain-community>=0.0.20
+
+# Google AI and Authentication
+# ----------------------------
+google-generativeai>=0.3.0
+google-auth>=2.15.0
+google-auth-oauthlib>=0.8.0
+
+# HTTP Requests and API Communication
+# -----------------------------------
+requests>=2.31.0
+urllib3>=1.26.0
+
+# Image Processing and Generation
+# -------------------------------
+Pillow>=9.5.0
+pillow-heif>=0.10.0  # For HEIF/HEIC image support
+
+# Markdown Processing and Conversion
+# ----------------------------------
+markdown>=3.4.0
+markdown-extensions>=0.1.0
+python-markdown-math>=0.8.0
+
+# PDF Conversion Tools (Multiple Options)
+# ---------------------------------------
+
+# Option 1: WeasyPrint (Recommended - Best CSS support)
+weasyprint>=59.0
+cssselect2>=0.7.0
+html5lib>=1.1
+cairocffi>=1.4.0  # Required for WeasyPrint
+cffi>=1.15.0
+
+# Option 2: mdpdf (Simple markdown to PDF)
+mdpdf>=1.4.0
+
+# Option 3: pdfkit (Requires wkhtmltopdf system binary)
+pdfkit>=1.0.0
+
+# HTML and CSS Processing
+# -----------------------
+beautifulsoup4>=4.12.0
+cssutils>=2.6.0
+lxml>=4.9.0
+
+# File I/O and System Operations
+# ------------------------------
+pathlib>=1.0.1
+tempfile>=1.0.0  # Built-in, but ensuring compatibility
+shutil>=1.0.0    # Built-in, but ensuring compatibility
+
+# Concurrent Processing and Threading
+# -----------------------------------
+threading>=1.0.0  # Built-in
+concurrent.futures>=3.1.0  # Built-in
+
+# Date and Time Handling
+# ----------------------
+python-dateutil>=2.8.0
+
+# Logging and Debugging
+# ---------------------
+colorlog>=6.7.0
+rich>=13.0.0  # For enhanced console output
+
+# Environment and Configuration
+# -----------------------------
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+
+# Text Processing and Utilities
+# -----------------------------
+regex>=2023.0.0
+unidecode>=1.3.0  # For text normalization
+
+# Optional: Enhanced PDF Features
+# -------------------------------
+reportlab>=4.0.0  # Alternative PDF generation
+pypdf>=3.0.0      # PDF manipulation if needed
+
+# Optional: Advanced Image Processing
+# -----------------------------------
+opencv-python>=4.8.0  # For advanced image operations (optional)
+numpy>=1.24.0          # Required by OpenCV and PIL operations
+
+# Development and Testing (Optional)
+# ----------------------------------
+# pytest>=7.0.0
+# pytest-asyncio>=0.21.0
+# black>=23.0.0
+# flake8>=6.0.0
+# mypy>=1.0.0
+
+# Platform-specific dependencies
+# ------------------------------
+# Windows-specific packages (automatically installed on Windows)
+pywin32>=306; sys_platform == "win32"
+
+# Linux-specific packages for better font support
+fonttools>=4.40.0; sys_platform == "linux"
+
+# macOS-specific packages (if needed)
+# pyobjc-framework-Cocoa>=9.0; sys_platform == "darwin"
+
+# System Dependencies Notes:
+# ========================
+# 
+# For WeasyPrint on different systems:
+# 
+# Ubuntu/Debian:
+#   sudo apt-get install python3-dev python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0
+#   sudo apt-get install libffi-dev shared-mime-info
+# 
+# CentOS/RHEL/Fedora:
+#   sudo yum install python3-devel python3-pip python3-cffi python3-brotli pango harfbuzz
+#   sudo yum install libffi-devel shared-mime-info
+# 
+# macOS:
+#   brew install python3 cairo pango gdk-pixbuf libffi
+# 
+# Windows:
+#   Most dependencies are handled by pip, but you may need:
+#   - Microsoft Visual C++ Build Tools
+#   - GTK+ runtime (for some advanced features)
+# 
+# For pdfkit:
+# ----------
+# Requires wkhtmltopdf binary:
+# 
+# Ubuntu/Debian:
+#   sudo apt-get install wkhtmltopdf
+# 
+# macOS:
+#   brew install wkhtmltopdf
+# 
+# Windows:
+#   Download from: https://wkhtmltopdf.org/downloads.html
+# 
+# Environment Variables Required:
+# ==============================
+# GOOGLE_API_KEY=your_google_api_key_here
+# HUGGINGFACE_API_KEY=your_huggingface_api_key_here
+#
+# Get keys from:
+# - Google AI Studio: https://aistudio.google.com/
+# - Hugging Face: https://huggingface.co/settings/tokens
